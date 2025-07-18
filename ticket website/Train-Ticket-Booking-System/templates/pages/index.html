@@ -1,0 +1,41 @@
+{%extends 'base.html'%}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Train Ticket Booking System</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+	<header>
+		<div class="main">
+		<div class="logo">
+		<!--	<img src=logo.png" alt=""> -->
+		</div>
+		<ul>
+			<li class="active"><a href='#'>Home</a></li>
+			<li><a href='#'>PNR status</a></li>
+			{% if user.is_authenticated %}
+			<li>Hello, {{user.first_name}}</li>
+			<li><a href='account/logout'>Logout</a></li>
+			{% else %}
+			<li><a href='account/register'>Register</a></li>
+			<li><a href='account/login'>Login</a></li>
+			{% endif %}
+			<li><a href='#'>About</a></li>
+			<li><a href='#'>Contact</a></li>
+		</ul>
+		</div>
+		<div class="title">
+			<h1>Book Tickets</h1>
+		</div>
+		<div class="botton">
+			<a href="#" class="btn">Book a Ticket</a>
+			
+		</div>
+	</header>
+</body>
+</html>
+{% endblock %}
